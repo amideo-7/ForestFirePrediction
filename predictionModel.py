@@ -6,4 +6,23 @@ import warnings
 import pickle
 warnings.filterwarnings("ignore")
 
-data = pd.read_csv("Forest_fire.csv")
+data = pd.read_csv("forestFire.csv")
+data = np.array(data)
+
+X= data[1:,1:-1]
+y = data[1:,-1]
+y = y.astype('int')
+X = X.astype('int')
+
+X_train, X_test, y_train, y_test = train_test_split(X,y,test_size=0.3, random_state=0)
+log_reg = LogisticRegression()
+
+log_reg.fit(X_train, y_train)
+
+Input = [int(x) for x in "45 32 60".split(' ')]
+final= [np.array(Input)]
+
+b = log_reg.predict_log_proba(final)
+
+pickle.dump(log_reg,open('model.pkl','wb'))
+model = pickle.load(open('model.pkl','rb'))
