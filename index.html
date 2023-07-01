@@ -5,6 +5,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
 
   <style>
+
     body {
     overflow: hidden;
     position: relative;
@@ -31,7 +32,6 @@
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.8));
 }
 
-
 .sub-heading{
     position: absolute;
     width: 500px;
@@ -50,7 +50,6 @@
     color: #FFFFFF;
     filter: drop-shadow(5px 5px 10px rgba(0, 0, 0, 0.5));
 }
-
 
 .output{
   position: absolute;
@@ -85,7 +84,6 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
     backdrop-filter: blur(10px);
 }
-
 
 ::placeholder{
     color: #121212;
@@ -196,7 +194,7 @@
 </div>
 
   <script>
-    // Generate random bubbles
+
     var background = document.querySelector('.background');
     var numBubbles = 30;
 
@@ -208,10 +206,9 @@
       bubble.style.height = bubble.style.width;
       bubble.style.animationDuration = Math.random() * 8 + 4 + 's';
 
-      // Randomize bubble color shades of red and orange
-      var hue = Math.floor(Math.random() * 21) + 0; // Shades of red and orange
-      var saturation = Math.floor(Math.random() * 61) + 40; // Vibrant colors
-      var lightness = Math.floor(Math.random() * 31) + 50; // Mid-range lightness
+      var hue = Math.floor(Math.random() * 21) + 0; 
+      var saturation = Math.floor(Math.random() * 61) + 40; 
+      var lightness = Math.floor(Math.random() * 31) + 50; 
       bubble.style.backgroundColor = 'hsl(' + hue + ', ' + saturation + '%, ' + lightness + '%)';
 
       background.appendChild(bubble);
